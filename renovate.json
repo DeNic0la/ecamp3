@@ -20,6 +20,14 @@
       "fileMatch": ["^.github/workflows/continuous-integration.yml$"],
       "matchStrings": ["(?<depName>cypress/included):(?<currentValue>[0-9.]+)\n"],
       "datasourceTemplate": "docker"
+    },
+    {
+      "fileMatch": ["^renovate.json$"],
+      "matchStrings": [
+        "\"node\": \"= (?<latestVersion>.+?)"
+      ],
+      "depNameTemplate": "node",
+      "datasourceTemplate":"git-tags"
     }
   ]
 }
